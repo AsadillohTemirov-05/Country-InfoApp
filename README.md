@@ -1,102 +1,332 @@
-<<<<<<< HEAD
-# Country-InfoApp
-=======
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+COUNTRY INFO APP
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+A NestJS application that provides country information and allows users to add national holidays to their calendar. The application integrates with external APIs (Nager.Date and CountriesNow) to fetch country details and holiday data, storing holidays in a MongoDB database. It includes Swagger documentation for easy API exploration.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+FEATURES
 
-## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Project setup
 
-```bash
-$ npm install
-```
 
-## Compile and run the project
+Country Information: Retrieve a list of available countries and detailed information (borders, population, flag URL) for a specific country.
 
-```bash
-# development
-$ npm run start
 
-# watch mode
-$ npm run start:dev
 
-# production mode
-$ npm run start:prod
-```
+Holiday Management: Add national holidays for a specified country and year to a user's calendar, with optional filtering by holiday names.
 
-## Run tests
 
-```bash
-# unit tests
-$ npm run test
 
-# e2e tests
-$ npm run test:e2e
+MongoDB Integration: Stores holiday data in MongoDB using Mongoose.
 
-# test coverage
-$ npm run test:cov
-```
 
-## Deployment
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+Swagger Documentation: Interactive API documentation available at /api.
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+Input Validation: Uses class-validator for robust request validation.
 
-## Resources
 
-Check out a few resources that may come in handy when working with NestJS:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+Error Handling: Comprehensive error messages and logging for debugging.
 
-## Support
+PREREQUISITES
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
->>>>>>> 8d59abc (Backend Task has been finished)
+Node.js: Version 16 or higher
+
+
+
+MongoDB: Local installation or a cloud instance (e.g., MongoDB Atlas)
+
+
+
+npm: For dependency management
+
+SETUP
+
+
+
+
+
+Clone the Repository:
+
+git clone https://github.com/<your-username>/country-info-app.git
+cd country-info-app
+
+
+
+Install Dependencies:
+
+npm install
+
+
+
+Configure Environment Variables: Create a .env file in the project root with the following content:
+
+NAGER_API_URL=https://date.nager.at/api/v3
+COUNTRIESNOW_API_URL=https://countriesnow.space/api/v0.1
+MONGODB_URI=mongodb://localhost:27017/country_info_db
+
+
+
+
+
+Replace MONGODB_URI with your MongoDB connection string if using a cloud instance.
+
+
+
+Ensure MongoDB is Running:
+
+
+
+
+
+For local MongoDB, start the server:
+
+mongod
+
+
+
+For MongoDB Atlas, ensure the URI is correctly configured in .env.
+
+
+
+Run the Application:
+
+npm run start:dev
+
+The application will be available at http://localhost:3000.
+
+API DOCUMENTATION
+
+Interactive Swagger UI is available at http://localhost:3000/api. It provides detailed documentation and testing capabilities for all endpoints.
+
+API ENDPOINTS
+
+COUNTRIES
+
+
+
+
+
+GET /countries
+
+
+
+
+
+Description: Retrieve a list of available countries.
+
+
+
+Response:
+
+[
+  { "countryCode": "US", "name": "United States" },
+  { "countryCode": "CA", "name": "Canada" }
+]
+
+
+
+GET /countries/:countryCode
+
+
+
+
+
+Description: Retrieve detailed information about a specific country (borders, population, flag URL).
+
+
+
+Example: GET /countries/US
+
+
+
+Response:
+
+{
+  "countryCode": "US",
+  "commonName": "United States",
+  "officialName": "United States of America",
+  "borders": ["CA", "MX"],
+  "population": [
+    { "year": 2020, "value": 331002651 },
+    { "year": 2019, "value": 328239523 }
+  ],
+  "flagUrl": "https://flagcdn.com/us.svg"
+}
+
+CALENDAR
+
+
+
+
+
+POST /users/:userId/calendar/holidays
+
+
+
+
+
+Description: Add national holidays for a specific country and year to a user's calendar. Optionally filter by specific holidays.
+
+
+
+Example Request:
+
+curl -X POST http://localhost:3000/users/123/calendar/holidays \
+-H "Content-Type: application/json" \
+-d '{"countryCode":"US","year":2025,"holidays":["New Year'\''s Day","Independence Day"]}'
+
+
+
+Request Body:
+
+{
+  "countryCode": "US",
+  "year": 2025,
+  "holidays": ["New Year's Day", "Independence Day"]
+}
+
+
+
+Response:
+
+[
+  {
+    "_id": "507f1f77bcf86cd799439011",
+    "userId": "123",
+    "countryCode": "US",
+    "year": 2025,
+    "holidayName": "New Year's Day",
+    "date": "2025-01-01",
+    "__v": 0
+  },
+  {
+    "_id": "507f1f77bcf86cd799439012",
+    "userId": "123",
+    "countryCode": "US",
+    "year": 2025,
+    "holidayName": "Independence Day",
+    "date": "2025-07-04",
+    "__v": 0
+  }
+]
+
+TESTING
+
+
+
+
+
+Lint and Format Code:
+
+npm run lint
+npm run format
+
+
+
+Test Endpoints:
+
+
+
+
+
+Use Swagger UI at http://localhost:3000/api for interactive testing.
+
+
+
+Use curl commands (as shown above) or tools like Postman.
+
+
+
+Verify MongoDB: Check saved holidays in the holidays collection:
+
+db.holidays.find({ userId: "123", countryCode: "US", year: 2025 })
+
+DEPENDENCIES
+
+
+
+
+
+@nestjs/core, @nestjs/common: NestJS framework
+
+
+
+@nestjs/mongoose, mongoose: MongoDB integration
+
+
+
+@nestjs/axios, axios: HTTP requests to external APIs
+
+
+
+@nestjs/swagger, swagger-ui-express: API documentation
+
+
+
+class-validator, class-transformer: Request validation
+
+
+
+Dev dependencies: @nestjs/cli, typescript, eslint, prettier
+
+NOTES
+
+
+
+
+
+External APIs:
+
+
+
+
+
+Country data: CountriesNow
+
+
+
+Holiday data: Nager.Date
+
+
+
+MongoDB: Ensure the database is running and accessible via the MONGODB_URI.
+
+
+
+Validation: The POST /users/:userId/calendar/holidays endpoint uses case-insensitive holiday name filtering and validates inputs using class-validator.
+
+
+
+Error Handling: Detailed error messages are provided for invalid inputs, API failures, or database issues.
+
+CONTRIBUTING
+
+
+
+
+
+Fork the repository.
+
+
+
+Create a feature branch (git checkout -b feature/your-feature).
+
+
+
+Commit changes (git commit -m 'Add your feature').
+
+
+
+Push to the branch (git push origin feature/your-feature).
+
+
+
+Open a Pull Request.
+
